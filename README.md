@@ -1,0 +1,1 @@
+# Trabalho01DiamanteDeX.ConsoleApp
