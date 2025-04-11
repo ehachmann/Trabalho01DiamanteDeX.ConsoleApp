@@ -15,9 +15,11 @@ namespace Trabalho01DiamanteDeX.ConsoleApp
                 Console.Clear();
 
                 // Entrada de dados
-
-                Console.WriteLine("Método do Diamante de X");
-                Console.WriteLine("OBS: O número deve ser ímpar e maior que 1");
+                Console.WriteLine("============================================="); 
+                Console.WriteLine("          Método do Diamante de X");
+                Console.WriteLine(" OBS: O número deve ser ímpar e maior que 1");
+                Console.WriteLine("=============================================");
+                Console.WriteLine();
                 Console.Write("Digite o número: ");
                 int numero = int.Parse(Console.ReadLine());
 
