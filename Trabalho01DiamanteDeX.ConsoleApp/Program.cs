@@ -4,10 +4,11 @@ namespace Trabalho01DiamanteDeX.ConsoleApp
 {
     internal class Program
     {
-        // Rotina de execução que faz o desenho do diamante de X
+        // Refatoração do código para melhorar a legibilidade
         static void Main(string[] args)
         {
             // Variável para controle de repetição
+
             string numeroinvalido = "S";
 
             while (numeroinvalido == "S")
@@ -45,38 +46,11 @@ namespace Trabalho01DiamanteDeX.ConsoleApp
 
                 Console.WriteLine();
 
-                // Desenha a parte superior do diamante
+                // Chama função para desenhar a parte superior do diamante
+                ParteSuperior(meio, espaco);
 
-                for (int i = 0; i <= meio; i++)
-                {
-                    for (int j = espaco; j >= 1; j--)
-                    {
-                        Console.Write(" ");
-                    }
-                    espaco--;
-                    for (int j = 1; j <= (2 * i + 1); j++)
-                    {
-                        Console.Write("*");
-                    }
-                    Console.WriteLine();
-                }
-
-                // Desenha a parte inferior do diamante
-
-                espaco = 1;
-                for (int i = meio - 1; i >= 0; i--)
-                {
-                    for (int j = 1; j <= espaco; j++)
-                    {
-                        Console.Write(" ");
-                    }
-                    espaco++;
-                    for (int j = 1; j <= (2 * i + 1); j++)
-                    {
-                        Console.Write("*");
-                    }
-                    Console.WriteLine();
-                }
+                // Chama função para desenhar a parte inferior do diamante
+                ParteInferior(meio, espaco);
 
              Console.WriteLine();
              Console.Write("Digitar novamente? (S/N): ");
@@ -85,6 +59,43 @@ namespace Trabalho01DiamanteDeX.ConsoleApp
              Console.Clear();
              if (opcaoContinuar != "S")
                  break;
+            }
+        }
+
+        // Desenha a parte superior do diamante
+        static void ParteSuperior(int meio, int espaco)
+        {
+            for (int i = 0; i <= meio; i++)
+            {
+                for (int j = espaco; j >= 1; j--)
+                {
+                    Console.Write(" ");
+                }
+                espaco--;
+                for (int j = 1; j <= (2 * i + 1); j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        // Desenha a parte inferior do diamante
+        static void ParteInferior(int meio, int espaco)
+        {
+            espaco = 1;
+            for (int i = meio; i >= 0; i--)
+            {
+                for (int j = espaco; j >= 1; j--)
+                {
+                    Console.Write(" ");
+                }
+                espaco++;
+                for (int j = 1; j <= (2 * i - 1); j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
             }
         }
     }
